@@ -59,7 +59,7 @@ export const FileStats = ({ data }: FileStatsProps) => {
           
           {/* Label */}
           <div>
-            <span className="text-sm text-[#8597A8]">{item.label}</span>
+            <span className="text-sm text-gray-text">{item.label}</span>
           </div>
         </div>
       ))}

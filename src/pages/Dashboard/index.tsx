@@ -1,46 +1,32 @@
 import { ProjectTimeline } from '../../components/Dashboard/ProjectTimeline';
 import { FileStats } from '../../components/Dashboard/FileStats';
-import type { FileStatItem } from '../../components/Dashboard/FileStats';
+import { ProgressStatus } from '../../components/Dashboard/ProgressStatus';
+import { ComplianceScore } from '../../components/Dashboard/ComplianceScore';
+import { TopPerformingLeaders } from '../../components/Dashboard/TopPerformingLeaders';
+import { RecentActivities } from '../../components/Dashboard/RecentActivities';
+import { YearlyPerformance } from '../../components/Dashboard/YearlyPerformance';
+import { AuditReadiness } from '../../components/Dashboard/AuditReadiness';
+import { FILE_STATS_DATA } from '../../utils/constants';
 
 export const Dashboard = () => {
-  const fileStatsData: FileStatItem[] = [
-    {
-      type: 'overall-progress',
-      value: '78.65%',
-      label: 'Overall Progress',
-    },
-    {
-      type: 'total-criteria',
-      value: 95,
-      label: 'Total Criteria',
-    },
-    {
-      type: 'completed-criteria',
-      value: 52,
-      label: 'Completed Criteria',
-    },
-    {
-      type: 'evidence-documents',
-      value: 386,
-      label: 'Evidence Documents',
-    },
-    {
-      type: 'evidence-completed',
-      value: 302,
-      label: 'Evidence (Completed)',
-    },
-    {
-      type: 'uploaded-dga',
-      value: 258,
-      label: 'Uploaded To DGA',
-    },
-  ];
 
   return (
     <div className="py-4 px-6 bg-page-bg min-h-full w-full">
       <div className="flex flex-col gap-4">
         <ProjectTimeline />
-        <FileStats data={fileStatsData} />
+        <FileStats data={FILE_STATS_DATA} />
+        <ProgressStatus />
+        <div className='w-full grid grid-cols-3 gap-4'>
+          <ComplianceScore />
+          <TopPerformingLeaders />
+          <RecentActivities />
+        </div>
+        <div className='w-full grid grid-cols-3 gap-4'>
+          <div className="col-span-2">
+            <YearlyPerformance />
+          </div>
+          <AuditReadiness />
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Dropdown } from '../../Dropdown';
+import { Section } from '../../Section';
 
 interface Milestone {
   date: string;
@@ -32,10 +33,9 @@ export const ProjectTimeline = () => {
   };
 
   return (
-    <div className="py-6 px-4 bg-white border border-gray-border rounded-[10px]">
+    <Section title="Project Timeline">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-lg font-bold text-gray-900">Project Timeline</h2>
         <Dropdown
           options={yearOptions}
           value={selectedYear}
@@ -86,6 +86,6 @@ export const ProjectTimeline = () => {
           </div>
         ))}
       </div>
-    </div>
+    </Section>
   );
 };
