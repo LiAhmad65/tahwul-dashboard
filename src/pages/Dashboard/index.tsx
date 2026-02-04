@@ -1,7 +1,9 @@
+import { ProjectTimeline } from '../../components/Dashboard/ProjectTimeline';
+
 export const Dashboard = () => {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+    <div className="py-4 px-6 bg-page-bg min-h-full">
+      <ProjectTimeline />
     </div>
   );
 };

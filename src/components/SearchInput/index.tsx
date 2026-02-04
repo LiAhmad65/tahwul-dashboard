@@ -1,18 +1,27 @@
+import { useState } from 'react';
 import { ICONS } from '../../utils/icons';
 
 interface SearchInputProps {
   placeholder?: string;
-  value?: string;
   onChange?: (value: string) => void;
+  className?: string;
 }
 
 export const SearchInput = ({ 
   placeholder = 'Search', 
-  value = '', 
-  onChange 
+  onChange,
+  className = ''
 }: SearchInputProps) => {
+  const [value, setValue] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value;
+    setValue(newValue);
+    onChange?.(newValue);
+  };
+
   return (
-    <div className="relative w-full">
+    <div className={`relative w-full ${className}`}>
       <img 
         src={ICONS?.searchIcon} 
         alt="Search icon"
@@ -22,7 +31,7 @@ export const SearchInput = ({
         type="text"
         placeholder={placeholder}
         value={value}
-        onChange={(e) => onChange?.(e.target.value)}
+        onChange={handleChange}
         className="
           w-full h-[34px] pl-10 pr-4
           bg-gray-bg border border-gray-border

@@ -19,7 +19,7 @@ export const NavDrawer = () => {
       <button
         onClick={toggleDrawer}
         className={`
-          absolute -right-4 top-8 z-50
+          absolute -right-4 top-[20px] z-50
           w-8 h-8 cursor-pointer rounded-full bg-white shadow-lg
           flex items-center justify-center
           transition-transform duration-300 ease-in-out
