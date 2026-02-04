@@ -2691,6 +2691,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-circular-progressbar@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "react-circular-progressbar@npm:2.2.0"
+  peerDependencies:
+    react: ">=0.14.0"
+  checksum: 10c0/77655598d48a826fff9a6fd2f6b61349bb2e762d1774c0bcd5a374916347e1d03821e51cd7ff0f294843f5088e569b0c266064af0a229403c510c238b3390a3b
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:^19.2.0":
   version: 19.2.4
   resolution: "react-dom@npm:19.2.4"
@@ -2973,6 +2982,7 @@ __metadata:
     globals: "npm:^16.5.0"
     postcss: "npm:^8.5.6"
     react: "npm:^19.2.0"
+    react-circular-progressbar: "npm:^2.2.0"
     react-dom: "npm:^19.2.0"
     react-router-dom: "npm:^7.13.0"
     tailwindcss: "npm:^4.1.18"

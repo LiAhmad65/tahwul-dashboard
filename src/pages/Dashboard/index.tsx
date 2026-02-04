@@ -17,7 +17,7 @@ export const Dashboard = () => {
         <FileStats data={FILE_STATS_DATA} />
         <ProgressStatus />
         <div className='w-full grid grid-cols-3 gap-4'>
-          <ComplianceScore />
+          <ComplianceScore score={50} label="Basic Standards 2025" />
           <TopPerformingLeaders />
           <RecentActivities />
         </div>
@@ -25,7 +25,7 @@ export const Dashboard = () => {
           <div className="col-span-2">
             <YearlyPerformance />
           </div>
-          <AuditReadiness />
+          <AuditReadiness score={80} label="Readiness Level" overdueStds={12} missingEvidence={5} />
         </div>
       </div>
     </div>
