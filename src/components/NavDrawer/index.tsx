@@ -37,9 +37,9 @@ export const NavDrawer = () => {
       {/* Drawer */}
       <div
         className={`
-          bg-primary-dark-blue h-screen px-[25px] py-6
+          bg-primary-dark-blue px-[25px] py-6
           transition-all duration-300 ease-in-out
-          overflow-hidden
+          overflow-hidden h-screen
           ${isOpen ? 'w-64' : 'w-0 px-0'}
         `}
       >

@@ -25,7 +25,7 @@ export const Navbar = () => {
           <span className="text-sm font-medium text-gray-900">Mohamed</span>
           <svg 
             className="w-4 h-4 text-gray-600" 
-            fill="none" 
+            fill="none"
             stroke="currentColor" 
             viewBox="0 0 24 24"
           >

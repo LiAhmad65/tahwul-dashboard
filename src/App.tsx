@@ -5,14 +5,16 @@ import { Dashboard } from './pages/Dashboard';
 
 function App() {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex h-screen overflow-hidden bg-page-bg">
       <NavDrawer />
-      <main className="flex-1 flex flex-col ">
+      <main className="flex-1 flex flex-col min-w-0 overflow-hidden">
         <Navbar />
-        <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/" element={<Dashboard />} />
-        </Routes>
+        <div className="flex-1 overflow-y-auto overflow-x-hidden bg-page-bg">
+          <Routes>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Dashboard />} />
+          </Routes>
+        </div>
       </main>
     </div>
   );

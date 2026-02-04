@@ -70,7 +70,7 @@ export const ProjectTimeline = () => {
               style={{ left: `${position}%`, transform: 'translate(-50%, -50%)' }}
             >
               {!isActive && (
-                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-red-timeline rounded-full"></div>
               )}
             </div>
           );
