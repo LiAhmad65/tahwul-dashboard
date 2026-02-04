@@ -68,3 +68,23 @@ export const FILE_STATS_DATA: FileStatItem[] = [
     label: 'Uploaded To DGA',
   },
 ];
+
+export interface YearlyPerformanceData {
+  month: string;
+  value: number;
+}
+
+export const YEARLY_PERFORMANCE_DATA: YearlyPerformanceData[] = [
+  { month: 'Jan', value: 88 },
+  { month: 'Feb', value: 76 },
+  { month: 'Mar', value: 80 },
+  { month: 'Apr', value: 42 },
+  { month: 'May', value: 88 },
+  { month: 'Jun', value: 79 },
+  { month: 'Jul', value: 55 },
+  { month: 'Aug', value: 88 },
+  { month: 'Sept', value: 79 },
+  { month: 'Oct', value: 55 },
+  { month: 'Nov', value: 88 },
+  { month: 'Dec', value: 79 },
+];
