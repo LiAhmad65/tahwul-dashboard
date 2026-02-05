@@ -13,6 +13,11 @@ import reportsIcon from '../assets/icons/reports-icon.svg';
 import searchIcon from '../assets/icons/search-icon.svg';
 import statsIcon from '../assets/icons/stats-icon.svg';
 import tasksIcon from '../assets/icons/tasks-icon.svg';
+import arrowLeftIcon from '../assets/icons/arrow-left-icon.svg';
+import fileExportIcon from '../assets/icons/file-export-icon.svg';
+import fileSearchIcon from '../assets/icons/file-search-icon.svg';
+import fileValidationIcon from '../assets/icons/file-validation-icon.svg';
+import filesIcon from '../assets/icons/files-icon.svg';
 
 export const ICONS = {
   appLogo,
@@ -30,4 +35,9 @@ export const ICONS = {
   searchIcon,
   statsIcon,
   tasksIcon,
+  arrowLeftIcon,
+  fileExportIcon,
+  fileSearchIcon,
+  fileValidationIcon,
+  filesIcon,
 };

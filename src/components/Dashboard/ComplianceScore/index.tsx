@@ -1,4 +1,4 @@
-import { Section } from '../../Section';
+import { Section } from '../../common/Section';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 

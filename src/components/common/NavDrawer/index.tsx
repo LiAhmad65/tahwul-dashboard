@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { NAV_OPTIONS } from '../../utils/constants';
-import { ICONS } from '../../utils/icons';
+import { NAV_OPTIONS } from '../../../utils/constants';
+import { ICONS } from '../../../utils/icons';
 import { DrawerButton } from './DrawerButton';
 
 export const NavDrawer = () => {

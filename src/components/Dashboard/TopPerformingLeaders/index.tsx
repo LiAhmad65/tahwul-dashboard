@@ -1,4 +1,4 @@
-import { Section } from '../../Section';
+import { Section } from '../../common/Section';
 import staticAvatar from '../../../assets/images/static-avatar.jpg';
 
 interface Leader {

@@ -1,4 +1,4 @@
-import { Section } from '../../Section';
+import { Section } from '../../common/Section';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
 import { YEARLY_PERFORMANCE_DATA } from '../../../utils/constants';
 

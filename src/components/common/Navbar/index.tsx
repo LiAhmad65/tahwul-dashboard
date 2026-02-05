@@ -1,5 +1,5 @@
 import { SearchInput } from '../SearchInput';
-import { ICONS } from '../../utils/icons';
+import { ICONS } from '../../../utils/icons';
 
 export const Navbar = () => {
   return (

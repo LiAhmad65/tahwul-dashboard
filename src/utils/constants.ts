@@ -1,4 +1,4 @@
-import type { FileStatItem } from '../components/Dashboard/FileStats';
+import type { FileStatItem } from '../components/common/FileStats';
 import { ICONS } from './icons';
 
 export const ProgressStatusType = {

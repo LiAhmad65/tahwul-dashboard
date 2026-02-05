@@ -1,4 +1,4 @@
-import { Section } from '../../Section';
+import { Section } from '../../common/Section';
 
 interface Activity {
   id: number;

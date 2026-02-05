@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Dropdown } from '../../Dropdown';
-import { Section } from '../../Section';
+import { Dropdown } from '../../common/Dropdown';
+import { Section } from '../../common/Section';
 
 interface Milestone {
   date: string;
@@ -33,9 +33,10 @@ export const ProjectTimeline = () => {
   };
 
   return (
-    <Section title="Project Timeline">
+    <Section>
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
+        <h2 className="text-base font-bold text-primary-dark-blue">Project Timeline</h2>
         <Dropdown
           options={yearOptions}
           value={selectedYear}
