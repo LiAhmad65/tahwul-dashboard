@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  min-width: 0;
+}
+
 @theme {
   --color-primary-dark-blue: #1D3557;
   --color-white: #FFFFFF;

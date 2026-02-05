@@ -33,10 +33,10 @@ export const ComplianceScore = () => {
             />
           </div>
           <div className="relative z-10 mt-15 flex flex-col items-center justify-center pointer-events-none">
-            <span className="text-[44px] font-bold text-primary-dark-blue">
+            <span className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-primary-dark-blue" style={{ wordBreak: 'break-word' }}>
               {animatedScore}%
             </span>
-            <span className="text-sm text-gray-text mt-2">
+            <span className="text-xs sm:text-sm text-gray-text mt-2 text-center" style={{ wordBreak: 'break-word' }}>
               {label}
             </span>
           </div>

@@ -100,8 +100,9 @@ export const ProjectTimeline = () => {
                 left: `${positionPercent}%`,
                 transform: isFirst ? 'translateX(0)' : isLast ? 'translateX(-100%)' : 'translateX(-50%)',
                 textAlign: isFirst ? 'left' : isLast ? 'right' : 'center',
-                width: '120px',
-                maxWidth: '120px',
+                width: { xs: '100px', sm: '120px' },
+                maxWidth: { xs: '100px', sm: '120px' },
+                minWidth: '80px',
               }}
             >
               {/* Date */}

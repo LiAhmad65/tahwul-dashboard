@@ -3,10 +3,10 @@ import { ICONS } from '../../../utils/icons';
 
 export const Navbar = () => {
   return (
-    <nav className="border-b border-gray-border px-[24px] py-[13px] flex items-center justify-between">
-      <SearchInput className="w-[318px]! ml-[40px]!" />
+    <nav className="border-b border-gray-border px-4 sm:px-6 py-3 flex items-center justify-between gap-2 sm:gap-4 min-w-0">
+      <SearchInput className="max-w-[318px] w-full ml-4 sm:ml-10" />
       
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-3 sm:gap-6 shrink-0">
         {/* Notification Icon */}
         <button className="relative">
           <img 
@@ -18,13 +18,13 @@ export const Navbar = () => {
         </button>
 
         {/* User Info */}
-        <div className="flex items-center gap-3 cursor-pointer bg-background-info p-2 rounded-4xl">
-          <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden">
+        <div className="flex items-center gap-2 sm:gap-3 cursor-pointer bg-background-info p-2 rounded-4xl shrink-0">
+          <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden shrink-0">
             <span className="text-xs font-medium text-gray-600">M</span>
           </div>
-          <span className="text-sm font-medium text-gray-900">Mohamed</span>
+          <span className="text-xs sm:text-sm font-medium text-gray-900 hidden sm:inline" style={{ wordBreak: 'break-word' }}>Mohamed</span>
           <svg 
-            className="w-4 h-4 text-gray-600" 
+            className="w-4 h-4 text-gray-600 shrink-0" 
             fill="none"
             stroke="currentColor" 
             viewBox="0 0 24 24"

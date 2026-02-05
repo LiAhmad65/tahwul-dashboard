@@ -20,31 +20,31 @@ export const Details = () => {
           
           <div
             key={index}
-            className="grid grid-cols-[220px_1px_1fr] gap-0"
+            className="grid grid-cols-1 md:grid-cols-[220px_1px_1fr] gap-0 min-w-0"
           >
             {/* Label */}
-            <div className="py-6 px-4">
+            <div className="py-6 px-4 min-w-0">
               <Bubble>
-                <span className="text-base font-regular text-primary-dark-blue">
+                <span className="text-base font-regular text-primary-dark-blue" style={{ wordBreak: 'break-word' }}>
                   {item?.label}
                 </span>
               </Bubble>
             </div>
 
             {/* Vertical Divider */}
-            <div className="bg-gray-border"></div>
+            <div className="bg-gray-border hidden md:block"></div>
 
             {/* Content */}
-            <div className="py-6 px-4">
+            <div className="py-6 px-4 min-w-0">
               <Bubble>
                 {Array.isArray(item?.content) ? (
-                  <div className="space-y-2 text-base font-normal text-primary-dark-blue">
+                  <div className="space-y-2 text-base font-normal text-primary-dark-blue" style={{ wordBreak: 'break-word' }}>
                     {item.content?.map((line, i) => (
                       <p key={i}>{line}</p>
                     ))}
                   </div>
                 ) : (
-                  <p className="text-base font-regular text-primary-dark-blue">
+                  <p className="text-base font-regular text-primary-dark-blue" style={{ wordBreak: 'break-word' }}>
                     {item?.content}
                   </p>
                 )}

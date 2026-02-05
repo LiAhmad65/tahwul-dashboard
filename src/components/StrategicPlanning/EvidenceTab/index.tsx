@@ -7,7 +7,7 @@ export const EvidenceTab = () => {
   return (
     <div className="flex flex-col gap-4">
       <EvidenceTable />
-      <div className="grid grid-cols-[2fr_1fr] gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4">
         <Comments />
         <RecentActivities data={RECENT_ACTIVITIES_DATA} />
       </div>

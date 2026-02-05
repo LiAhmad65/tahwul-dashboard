@@ -75,8 +75,8 @@ export const EvidenceTable = ({ data = EVIDENCE_TABLE_DATA }: EvidenceTableProps
   return (
     <Section>
       <div className="overflow-x-auto rounded-[10px] overflow-hidden max-h-[600px] flex flex-col relative">
-        <div className="overflow-y-auto flex-1">
-          <table className="w-full">
+        <div className="overflow-y-auto flex-1 min-w-0">
+          <table className="w-full min-w-[800px]">
             <thead className="sticky top-0 z-10">
               <tr className="bg-table-header-bg">
                 {EVIDENCE_TABLE_COLUMNS.map((column, index) => (
@@ -112,8 +112,10 @@ export const EvidenceTable = ({ data = EVIDENCE_TABLE_DATA }: EvidenceTableProps
                   }`}
                 >
                   {EVIDENCE_TABLE_COLUMNS.map((column) => (
-                    <td key={column.key} className={`py-6 px-2 text-sm font-normal text-primary-dark-blue whitespace-nowrap`}>
-                      {getCellValue(doc, column.key)}
+                    <td key={column.key} className={`py-6 px-2 text-sm font-normal text-primary-dark-blue ${column.key === 'documentName' ? '' : 'whitespace-nowrap'}`}>
+                      <div className="min-w-0" style={{ wordBreak: column.key === 'documentName' ? 'break-word' : 'normal' }}>
+                        {getCellValue(doc, column.key)}
+                      </div>
                     </td>
                   ))}
                 </tr>

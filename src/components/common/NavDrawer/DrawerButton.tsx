@@ -12,7 +12,7 @@ export const DrawerButton = ({ name, icon, isActive, onClick }: DrawerButtonProp
     <button
       onClick={onClick}
       className={`
-        w-full flex items-center cursor-pointer gap-3 px-4 py-3 rounded-r-lg transition-all duration-200
+        w-full flex items-center cursor-pointer gap-2 sm:gap-3 px-2 sm:px-4 py-2 sm:py-3 rounded-r-lg transition-all duration-200 min-w-0
         ${isActive 
           ? 'bg-nav-selected text-white' 
           : 'text-gray-400 hover:bg-nav-selected hover:text-white'
@@ -22,9 +22,9 @@ export const DrawerButton = ({ name, icon, isActive, onClick }: DrawerButtonProp
       <img 
         src={icon} 
         alt={`${name} icon`}
-        className={`w-5 h-5 ${isActive ? 'brightness-0 invert' : ''}`}
+        className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 ${isActive ? 'brightness-0 invert' : ''}`}
       />
-      <span className="text-sm font-medium">{name}</span>
+      <span className="text-xs sm:text-sm font-medium" style={{ wordBreak: 'break-word' }}>{name}</span>
     </button>
   );
 };

@@ -19,9 +19,9 @@ export const NavDrawer = () => {
       <button
         onClick={toggleDrawer}
         className={`
-          absolute -right-4 top-[20px] z-50
+          absolute -right-4 top-5 z-50
           w-8 h-8 cursor-pointer rounded-full bg-white shadow-lg
-          flex items-center justify-center
+          flex items-center justify-center shrink-0
           transition-transform duration-300 ease-in-out
           hover:scale-110
           ${isOpen ? 'rotate-0' : 'rotate-180'}
@@ -37,20 +37,20 @@ export const NavDrawer = () => {
       {/* Drawer */}
       <div
         className={`
-          bg-primary-dark-blue px-[25px] py-6
+          bg-primary-dark-blue px-3 sm:px-6 py-6
           transition-all duration-300 ease-in-out
-          overflow-hidden h-screen
-          ${isOpen ? 'w-64' : 'w-0 px-0'}
+          overflow-hidden h-screen shrink-0
+          ${isOpen ? 'w-48 sm:w-64 min-w-[192px] sm:min-w-[256px]' : 'w-0 px-0'}
         `}
       >
         {isOpen && (
           <>
             {/* Logo Section */}
-            <div className="mb-8">
+            <div className="mb-6 sm:mb-8">
               <img 
                 src={ICONS?.appLogo} 
                 alt="TAHWUL Logo"
-                className="h-12 w-auto"
+                className="h-8 sm:h-12 w-auto"
               />
             </div>
 

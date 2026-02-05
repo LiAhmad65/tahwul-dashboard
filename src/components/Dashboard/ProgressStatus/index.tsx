@@ -23,11 +23,11 @@ export const ProgressStatus = () => {
 
   return (
     <div className="bg-white border border-gray-border py-6 px-4 rounded-[10px]">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-6">
         <h2 className="text-base font-bold text-primary-dark-blue">Progress Status</h2>
         <StatusMap />
       </div>
-      <div className="grid grid-cols-10 gap-3 items-start">
+      <div className="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-10 gap-3 items-start overflow-x-auto">
         {dataWithOnPress.map((category) => (
           <div key={category.title} className="flex flex-col gap-3 h-full">
             <ProgressCard

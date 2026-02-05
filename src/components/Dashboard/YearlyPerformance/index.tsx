@@ -8,8 +8,8 @@ export const YearlyPerformance = () => {
   const data = useYearlyPerformanceData(selectedYear);
   return (
     <Section title="12-Month Performance">
-      <div className="py-4">
-        <ResponsiveContainer width="100%" height={300}>
+      <div className="py-4 min-w-0 overflow-x-auto">
+        <ResponsiveContainer width="100%" height={300} minWidth={0}>
           <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
             <defs>
               <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">

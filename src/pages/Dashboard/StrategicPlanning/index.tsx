@@ -49,14 +49,14 @@ export const StrategicPlanning = () => {
   }
 
   return (
-    <div className="py-4 px-6 bg-page-bg min-h-full w-full">
-      <div className="flex items-center gap-4 pb-4  bg-page-bg cursor-pointer" onClick={handleBack}>
+    <div className="py-4 px-4 sm:px-6 bg-page-bg min-h-full w-full min-w-0">
+      <div className="flex items-center gap-4 pb-4 bg-page-bg cursor-pointer min-w-0" onClick={handleBack}>
             <img src={ICONS.arrowLeftIcon} alt="Back" className="w-5 h-5" />
           <h1 className="text-base font-bold text-primary-dark-blue">
             Digital Transformation Strategic Planning
           </h1>
         </div>
-      <div className="w-full  flex flex-col gap-4">
+      <div className="w-full flex flex-col gap-4 min-w-0">
         <StrategicPlanningCard />
         <FileStats data={evidenceData} cols={4} iconPosition="left" />
         <Tabs tabs={tabsData} defaultActiveTab="overview" onChange={(tabId)=>onTabChange(tabId)}/>

@@ -36,7 +36,7 @@ const FileStatItem = ({ item, iconPosition }: { item: FileStatItem; iconPosition
 
   return (
     <div
-      className={`bg-white border border-gray-border rounded-[10px] p-4 ${isIconLeft ? 'flex items-center gap-3' : 'relative'}`}
+      className={`bg-white border border-gray-border rounded-[10px] p-4 min-w-0 ${isIconLeft ? 'flex items-center gap-3' : 'relative'}`}
     >
       {/* Icon */}
       {isIconLeft ? (
@@ -64,17 +64,17 @@ const FileStatItem = ({ item, iconPosition }: { item: FileStatItem; iconPosition
       )}
       
       {/* Value and Label */}
-      <div className="flex-1">
+      <div className="flex-1 min-w-0">
         {/* Value */}
         <div className="mb-1">
-          <span className="text-2xl font-bold text-primary-dark-blue">
+          <span className="text-lg sm:text-xl md:text-2xl font-bold text-primary-dark-blue" style={{ wordBreak: 'break-word' }}>
             {displayValue}
           </span>
         </div>
         
         {/* Label */}
         <div>
-          <span className="text-sm text-gray-text">{item.label}</span>
+          <span className="text-[10px] sm:text-xs md:text-sm text-gray-text" style={{ wordBreak: 'break-word' }}>{item.label}</span>
         </div>
       </div>
     </div>
@@ -96,7 +96,7 @@ export const FileStats = ({ data, cols = 6, iconPosition = 'right' }: FileStatsP
   const gridCols = gridColsMap[cols] || 'grid-cols-6';
   
   return (
-    <div className={`grid ${gridCols} gap-4`}>
+    <div className={`grid grid-cols-3 lg:${gridCols} gap-4 overflow-x-auto min-w-0`}>
       {displayData.map((item, index) => (
         <FileStatItem key={index} item={item} iconPosition={iconPosition} />
       ))}

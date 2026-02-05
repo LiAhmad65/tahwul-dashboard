@@ -9,18 +9,18 @@ import { AuditReadiness } from '../../components/Dashboard/AuditReadiness';
 
 export const Dashboard = () => {
   return (
-    <div className="py-4 px-6 bg-page-bg min-h-full w-full">
-      <div className="flex flex-col gap-4">
+    <div className="py-4 px-4 sm:px-6 bg-page-bg min-h-full w-full min-w-0">
+      <div className="flex flex-col gap-4 min-w-0">
         <ProjectTimeline />
         <FileStats />
         <ProgressStatus />
-        <div className='w-full grid grid-cols-3 gap-4'>
+        <div className='w-full grid grid-cols-1 lg:grid-cols-3 gap-4'>
           <ComplianceScore />
           <TopPerformingLeaders />
           <RecentActivities />
         </div>
-        <div className='w-full grid grid-cols-3 gap-4'>
-          <div className="col-span-2">
+        <div className='w-full grid grid-cols-1 lg:grid-cols-3 gap-4'>
+          <div className="lg:col-span-2">
             <YearlyPerformance />
           </div>
           <AuditReadiness />

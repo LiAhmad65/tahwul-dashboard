@@ -24,7 +24,7 @@ export const ProgressCard = ({ title, percentage, items, isMainCategory = false,
           onPress ? 'cursor-pointer hover:opacity-90 transition-opacity duration-200' : ''
         }`}
       >
-        <div className="text-white text-xs font-bold text-center">
+        <div className="text-white text-xs font-bold text-center px-1" style={{ wordBreak: 'break-word' }}>
           {title.split(' ').map((word, index) => (
             <span key={index}>
               {word}
@@ -32,8 +32,8 @@ export const ProgressCard = ({ title, percentage, items, isMainCategory = false,
             </span>
           ))}
         </div>
-        <div className="bg-percentage-badge-bg rounded-lg px-3 py-1.5 mt-auto">
-          <span className="text-white text-center text-sm font-bold">{percentage}</span>
+        <div className="bg-percentage-badge-bg rounded-lg px-2 sm:px-3 py-1.5 mt-auto">
+          <span className="text-white text-center text-xs sm:text-sm font-bold" style={{ wordBreak: 'break-word' }}>{percentage}</span>
         </div>
       </div>
     );
@@ -42,7 +42,7 @@ export const ProgressCard = ({ title, percentage, items, isMainCategory = false,
   return (
     <Section className="h-full p-2! bg-gray-bg! min-h-[120px]!">
       <div className="flex flex-col gap-2 h-full">
-        <h3 className="text-[10px] font-normal text-primary-dark-blue text-center">{title}</h3>
+        <h3 className="text-[10px] font-normal text-primary-dark-blue text-center px-1" style={{ wordBreak: 'break-word' }}>{title}</h3>
         <div className="grid grid-cols-3 gap-2 flex-1 justify-items-center">
           {items.map((item) => (
             <div

@@ -35,10 +35,10 @@ export const AuditReadiness = () => {
             />
           </div>
           <div className="relative z-10 mt-15 flex flex-col items-center justify-center pointer-events-none">
-            <span className="text-[44px] font-bold text-primary-dark-blue">
+            <span className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-primary-dark-blue" style={{ wordBreak: 'break-word' }}>
               {animatedScore}%
             </span>
-            <span className="text-sm text-gray-text mt-2">
+            <span className="text-xs sm:text-sm text-gray-text mt-2 text-center" style={{ wordBreak: 'break-word' }}>
               {label}
             </span>
           </div>
@@ -48,20 +48,20 @@ export const AuditReadiness = () => {
         <div className="w-full border-t border-gray-border my-8"></div>
         
         {/* Metrics */}
-        <div className="flex justify-around w-full">
-          <div className="flex flex-col items-center">
-            <span className="text-3xl font-bold text-primary-dark-blue">
+        <div className="flex justify-around w-full flex-wrap gap-4">
+          <div className="flex flex-col items-center min-w-0">
+            <span className="text-2xl sm:text-3xl font-bold text-primary-dark-blue" style={{ wordBreak: 'break-word' }}>
               {animatedOverdueStds}
             </span>
-            <span className="text-sm text-gray-text mt-1">
+            <span className="text-xs sm:text-sm text-gray-text mt-1 text-center" style={{ wordBreak: 'break-word' }}>
               Overdue Stds
             </span>
           </div>
-          <div className="flex flex-col items-center">
-            <span className="text-3xl font-bold text-primary-dark-blue">
+          <div className="flex flex-col items-center min-w-0">
+            <span className="text-2xl sm:text-3xl font-bold text-primary-dark-blue" style={{ wordBreak: 'break-word' }}>
               {animatedMissingEvidence}
             </span>
-            <span className="text-sm text-gray-text mt-1">
+            <span className="text-xs sm:text-sm text-gray-text mt-1 text-center" style={{ wordBreak: 'break-word' }}>
               Missing Evidence
             </span>
           </div>
