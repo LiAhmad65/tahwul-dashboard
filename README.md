@@ -13,7 +13,7 @@ A comprehensive dashboard application for tracking and managing digital transfor
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/LiAhmad65/tahwul-dashboard.git
 cd tahwul-dashboard
 ```
 
