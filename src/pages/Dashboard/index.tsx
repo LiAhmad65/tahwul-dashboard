@@ -4,10 +4,10 @@ import { FileStats } from '../../components/common/FileStats';
 import { ProgressStatus } from '../../components/Dashboard/ProgressStatus';
 import { ComplianceScore } from '../../components/Dashboard/ComplianceScore';
 import { TopPerformingLeaders } from '../../components/Dashboard/TopPerformingLeaders';
-import { RecentActivities } from '../../components/Dashboard/RecentActivities';
+import { RecentActivities } from '../../components/common/RecentActivities';
 import { YearlyPerformance } from '../../components/Dashboard/YearlyPerformance';
 import { AuditReadiness } from '../../components/Dashboard/AuditReadiness';
-import { FILE_STATS_DATA } from '../../utils/constants';
+import { FILE_STATS_DATA, RECENT_ACTIVITIES_DATA } from '../../utils/constants';
 
 export const Dashboard = () => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ export const Dashboard = () => {
         <div className='w-full grid grid-cols-3 gap-4'>
           <ComplianceScore score={50} label="Basic Standards 2025" />
           <TopPerformingLeaders />
-          <RecentActivities />
+          <RecentActivities data={RECENT_ACTIVITIES_DATA} />
         </div>
         <div className='w-full grid grid-cols-3 gap-4'>
           <div className="col-span-2">

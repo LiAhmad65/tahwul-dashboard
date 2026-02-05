@@ -50,7 +50,7 @@ export const StrategicPlanning = () => {
 
   return (
     <div className="py-4 px-6 bg-page-bg min-h-full w-full">
-      <div className="flex items-center gap-4 pb-4 sticky top-0 bg-page-bg cursor-pointer transition-all duration-300 ease-in-out z-10" onClick={handleBack}>
+      <div className="flex items-center gap-4 pb-4  bg-page-bg cursor-pointer" onClick={handleBack}>
             <img src={ICONS.arrowLeftIcon} alt="Back" className="w-5 h-5" />
           <h1 className="text-base font-bold text-primary-dark-blue">
             Digital Transformation Strategic Planning

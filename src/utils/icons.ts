@@ -18,6 +18,7 @@ import fileExportIcon from '../assets/icons/file-export-icon.svg';
 import fileSearchIcon from '../assets/icons/file-search-icon.svg';
 import fileValidationIcon from '../assets/icons/file-validation-icon.svg';
 import filesIcon from '../assets/icons/files-icon.svg';
+import sentIcon from '../assets/icons/sent-icon.svg';
 
 export const ICONS = {
   appLogo,
@@ -40,4 +41,5 @@ export const ICONS = {
   fileSearchIcon,
   fileValidationIcon,
   filesIcon,
+  sentIcon,
 };
