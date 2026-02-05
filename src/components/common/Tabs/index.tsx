@@ -8,15 +8,15 @@ export interface TabItem {
 interface TabsProps {
   tabs: TabItem[];
   defaultActiveTab?: string;
-  onTabChange?: (tabId: string) => void;
+  onChange?: (tabId: string) => void;
 }
 
-export const Tabs = ({ tabs, defaultActiveTab, onTabChange }: TabsProps) => {
+export const Tabs = ({ tabs, defaultActiveTab, onChange }: TabsProps) => {
   const [activeTab, setActiveTab] = useState(defaultActiveTab || tabs[0]?.id);
 
   const handleTabClick = (tabId: string) => {
     setActiveTab(tabId);
-    onTabChange?.(tabId);
+    onChange?.(tabId);
   };
 
   return (
@@ -27,7 +27,7 @@ export const Tabs = ({ tabs, defaultActiveTab, onTabChange }: TabsProps) => {
           <button
             key={tab.id}
             onClick={() => handleTabClick(tab.id)}
-            className={`px-4 py-2 cursor-pointer rounded-lg transition-all duration-200 ${
+            className={`px-4 py-2 cursor-pointer rounded-lg transition-all text-sm font-normal duration-200 ${
               isActive
                 ? 'bg-white text-primary-dark-blue font-medium shadow-sm'
                 : 'bg-transparent text-gray-text hover:text-primary-dark-blue'

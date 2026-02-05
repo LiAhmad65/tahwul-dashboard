@@ -88,3 +88,40 @@ export const YEARLY_PERFORMANCE_DATA: YearlyPerformanceData[] = [
   { month: 'Nov', value: 88 },
   { month: 'Dec', value: 79 },
 ];
+
+export interface DetailItem {
+  label: string;
+  content: string | string[];
+}
+
+export const STRATEGIC_PLANNING_DETAILS: DetailItem[] = [
+  {
+    label: 'Objective',
+    content:
+      "Develop A Digital Transformation Strategy Aligned With The Organization's Strategy And The Objectives Of Saudi Vision 2030.",
+  },
+  {
+    label: 'Implementation Requirements',
+    content: [
+      'Prepare A Digital Transformation Strategy For The Transition To Electronic Government Transactions, Including The Following:',
+      "A. The Organization's Vision, Mission, Strategic Pillars, And Strategic Objectives, And Their Alignment With The Organization's Overall Strategy.",
+      'B. Strategic Initiatives, Programs, And Performance Indicators.',
+      "C. A Clear Methodology For Integration And Coordination With Relevant External Entities To Achieve The Strategy's Objectives.",
+      "D. Required Competencies, Capabilities, And Skills Necessary To Achieve The Strategy's Objectives.",
+    ],
+  },
+  {
+    label: 'Evidence Documents',
+    content:
+      'Submit The Approved Digital Transformation Strategy That Includes All The Requirements Of This Standard, Provided That It Has Been Approved Within A Period Not Exceeding 36 Months.',
+  },
+  {
+    label: 'Related Regulations',
+    content:
+      'Council Of Ministers Resolution No. (40) Dated 27/2/1427H, Clause (16).',
+  },
+  {
+    label: 'Scope',
+    content: 'All Government Entities.',
+  },
+];
