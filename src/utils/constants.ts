@@ -1,9 +1,9 @@
 import type { FileStatItem } from '../components/common/FileStats';
 import { ICONS } from './icons';
-import { ProgressStatusType, TimelineStepStatus, type StatusItem, type YearlyPerformanceData, type DetailItem, type EvidenceDocument, type TableColumn, type Comment, type Activity, type MainCategory, type TimelineStep, type TimelineStepStatusValue } from './types';
+import { ProgressStatusType, TimelineStepStatus, type StatusItem, type YearlyPerformanceData, type DetailItem, type EvidenceDocument, type TableColumn, type Comment, type Activity, type MainCategory, type TimelineStep, type TimelineStepStatusValue, type Leader } from './types';
 
 export { ProgressStatusType, TimelineStepStatus };
-export type { StatusItem, YearlyPerformanceData, DetailItem, EvidenceDocument, TableColumn, Comment, Activity, MainCategory, TimelineStep, TimelineStepStatusValue };
+export type { StatusItem, YearlyPerformanceData, DetailItem, EvidenceDocument, TableColumn, Comment, Activity, MainCategory, TimelineStep, TimelineStepStatusValue, Leader };
 
 export const STATUS_MAP: StatusItem[] = [
   { label: 'Not Started', color: '#9CA3AF', type: ProgressStatusType.NOT_STARTED },
@@ -23,7 +23,7 @@ export const NAV_OPTIONS = [
   { id: 'users-roles', name: 'Users & Roles', icon: ICONS?.peopleIcon, route: '/users-roles' },
 ];
 
-export const FILE_STATS_DATA: FileStatItem[] = [
+export const FILE_STATS_DATA_2026: FileStatItem[] = [
   {
     type: 'overall-progress',
     value: '78.65%',
@@ -56,7 +56,76 @@ export const FILE_STATS_DATA: FileStatItem[] = [
   },
 ];
 
-export const YEARLY_PERFORMANCE_DATA: YearlyPerformanceData[] = [
+export const FILE_STATS_DATA_2025: FileStatItem[] = [
+  {
+    type: 'overall-progress',
+    value: '72.30%',
+    label: 'Overall Progress',
+  },
+  {
+    type: 'total-criteria',
+    value: 88,
+    label: 'Total Criteria',
+  },
+  {
+    type: 'completed-criteria',
+    value: 45,
+    label: 'Completed Criteria',
+  },
+  {
+    type: 'evidence-documents',
+    value: 342,
+    label: 'Evidence Documents',
+  },
+  {
+    type: 'evidence-completed',
+    value: 268,
+    label: 'Evidence (Completed)',
+  },
+  {
+    type: 'uploaded-dga',
+    value: 215,
+    label: 'Uploaded To DGA',
+  },
+];
+
+export const FILE_STATS_DATA_2024: FileStatItem[] = [
+  {
+    type: 'overall-progress',
+    value: '95.80%',
+    label: 'Overall Progress',
+  },
+  {
+    type: 'total-criteria',
+    value: 95,
+    label: 'Total Criteria',
+  },
+  {
+    type: 'completed-criteria',
+    value: 91,
+    label: 'Completed Criteria',
+  },
+  {
+    type: 'evidence-documents',
+    value: 420,
+    label: 'Evidence Documents',
+  },
+  {
+    type: 'evidence-completed',
+    value: 395,
+    label: 'Evidence (Completed)',
+  },
+  {
+    type: 'uploaded-dga',
+    value: 380,
+    label: 'Uploaded To DGA',
+  },
+];
+
+// Default export for backward compatibility
+export const FILE_STATS_DATA = FILE_STATS_DATA_2026;
+
+export const YEARLY_PERFORMANCE_DATA_2026: YearlyPerformanceData[] = [
   { month: 'Jan', value: 88 },
   { month: 'Feb', value: 76 },
   { month: 'Mar', value: 80 },
@@ -70,6 +139,39 @@ export const YEARLY_PERFORMANCE_DATA: YearlyPerformanceData[] = [
   { month: 'Nov', value: 88 },
   { month: 'Dec', value: 79 },
 ];
+
+export const YEARLY_PERFORMANCE_DATA_2025: YearlyPerformanceData[] = [
+  { month: 'Jan', value: 75 },
+  { month: 'Feb', value: 68 },
+  { month: 'Mar', value: 72 },
+  { month: 'Apr', value: 65 },
+  { month: 'May', value: 78 },
+  { month: 'Jun', value: 70 },
+  { month: 'Jul', value: 62 },
+  { month: 'Aug', value: 80 },
+  { month: 'Sept', value: 73 },
+  { month: 'Oct', value: 68 },
+  { month: 'Nov', value: 82 },
+  { month: 'Dec', value: 75 },
+];
+
+export const YEARLY_PERFORMANCE_DATA_2024: YearlyPerformanceData[] = [
+  { month: 'Jan', value: 92 },
+  { month: 'Feb', value: 88 },
+  { month: 'Mar', value: 90 },
+  { month: 'Apr', value: 85 },
+  { month: 'May', value: 94 },
+  { month: 'Jun', value: 91 },
+  { month: 'Jul', value: 89 },
+  { month: 'Aug', value: 93 },
+  { month: 'Sept', value: 90 },
+  { month: 'Oct', value: 88 },
+  { month: 'Nov', value: 95 },
+  { month: 'Dec', value: 92 },
+];
+
+// Default export for backward compatibility
+export const YEARLY_PERFORMANCE_DATA = YEARLY_PERFORMANCE_DATA_2026;
 
 export const STRATEGIC_PLANNING_DETAILS: DetailItem[] = [
   {
@@ -141,102 +243,12 @@ export const EVIDENCE_TABLE_DATA: EvidenceDocument[] = [
     status: 'Approved',
   },
   {
-    documentNumber: '5.4.1.5',
-    documentName: 'Technology_Assessment.Docx',
-    documentLead: 'Omar Al-Rashid',
-    documentPreparer: 'Omar Al-Rashid',
-    date: '2025-08-03',
-    dueDate: '2025-08-20',
-    status: 'Pending Review',
-  },
-  {
-    documentNumber: '5.4.1.6',
-    documentName: 'Budget_Allocation_2025.Xlsx',
-    documentLead: 'Fatima Al-Zahra',
-    documentPreparer: 'Fatima Al-Zahra',
-    date: '2025-08-04',
-    dueDate: '2025-08-18',
-    status: 'Approved',
-  },
-  {
-    documentNumber: '5.4.1.7',
-    documentName: 'Risk_Analysis_Report.Pdf',
-    documentLead: 'Khalid Al-Saud',
-    documentPreparer: 'Khalid Al-Saud',
-    date: '2025-08-05',
-    dueDate: '2025-08-22',
-    status: 'Pending Review',
-  },
-  {
     documentNumber: '5.4.1.8',
     documentName: 'Implementation_Timeline.Docx',
     documentLead: 'Layla Al-Hashimi',
     documentPreparer: 'Layla Al-Hashimi',
     date: '2025-08-06',
     dueDate: '2025-08-25',
-    status: 'Rejected',
-  },
-  {
-    documentNumber: '5.4.1.9',
-    documentName: 'Stakeholder_Engagement_Plan.Pdf',
-    documentLead: 'Yusuf Al-Mutairi',
-    documentPreparer: 'Yusuf Al-Mutairi',
-    date: '2025-08-07',
-    dueDate: '2025-08-28',
-    status: 'Approved',
-  },
-  {
-    documentNumber: '5.4.1.10',
-    documentName: 'Performance_Metrics_Dashboard.Xlsx',
-    documentLead: 'Noor Al-Dosari',
-    documentPreparer: 'Noor Al-Dosari',
-    date: '2025-08-08',
-    dueDate: '2025-08-30',
-    status: 'Pending Review',
-  },
-  {
-    documentNumber: '5.4.1.11',
-    documentName: 'Compliance_Checklist.Pdf',
-    documentLead: 'Hassan Al-Qahtani',
-    documentPreparer: 'Hassan Al-Qahtani',
-    date: '2025-08-09',
-    dueDate: '2025-09-01',
-    status: 'Approved',
-  },
-  {
-    documentNumber: '5.4.1.12',
-    documentName: 'Change_Management_Strategy.Docx',
-    documentLead: 'Aisha Al-Shammari',
-    documentPreparer: 'Aisha Al-Shammari',
-    date: '2025-08-10',
-    dueDate: '2025-09-05',
-    status: 'Pending Review',
-  },
-  {
-    documentNumber: '5.4.1.13',
-    documentName: 'Training_Materials_Compilation.Pdf',
-    documentLead: 'Majed Al-Otaibi',
-    documentPreparer: 'Majed Al-Otaibi',
-    date: '2025-08-11',
-    dueDate: '2025-09-08',
-    status: 'Approved',
-  },
-  {
-    documentNumber: '5.4.1.14',
-    documentName: 'Quality_Assurance_Report.Xlsx',
-    documentLead: 'Reem Al-Fahad',
-    documentPreparer: 'Reem Al-Fahad',
-    date: '2025-08-12',
-    dueDate: '2025-09-10',
-    status: 'Pending Review',
-  },
-  {
-    documentNumber: '5.4.1.15',
-    documentName: 'Final_Review_Document.Pdf',
-    documentLead: 'Tariq Al-Mazrouei',
-    documentPreparer: 'Tariq Al-Mazrouei',
-    date: '2025-08-13',
-    dueDate: '2025-09-12',
     status: 'Rejected',
   },
 ];
@@ -268,7 +280,7 @@ export const INITIAL_COMMENTS: Comment[] = [
   },
 ];
 
-export const RECENT_ACTIVITIES_DATA: Activity[] = [
+export const RECENT_ACTIVITIES_DATA_2026: Activity[] = [
   {
     id: 1,
     description: "Document 'Strategy_Review.Pdf' Was Uploaded By Ahmed Khaled",
@@ -286,7 +298,46 @@ export const RECENT_ACTIVITIES_DATA: Activity[] = [
   },
 ];
 
-export const PROGRESS_STATUS_DATA: MainCategory[] = [
+export const RECENT_ACTIVITIES_DATA_2025: Activity[] = [
+  {
+    id: 1,
+    description: "Document 'Annual_Report_2025.Pdf' Was Uploaded By Sarah Al-Khaled",
+    timestamp: '10 Mins Ago',
+  },
+  {
+    id: 2,
+    description: "Task 'Update Performance Metrics' Was Assigned To Mohammad Al-Mansour",
+    timestamp: '35 Mins Ago',
+  },
+  {
+    id: 3,
+    description: "New Criterion '4.2 Data Security' Was Created By Admin",
+    timestamp: '2 Hours Ago',
+  },
+];
+
+export const RECENT_ACTIVITIES_DATA_2024: Activity[] = [
+  {
+    id: 1,
+    description: "Document 'Final_Review_2024.Pdf' Was Uploaded By Admin",
+    timestamp: '1 Day Ago',
+  },
+  {
+    id: 2,
+    description: "Task 'Project Closure' Was Completed By Team Lead",
+    timestamp: '2 Days Ago',
+  },
+  {
+    id: 3,
+    description: "All Criteria For 2024 Were Successfully Completed",
+    timestamp: '1 Week Ago',
+  },
+];
+
+// Default export for backward compatibility
+export const RECENT_ACTIVITIES_DATA = RECENT_ACTIVITIES_DATA_2026;
+
+export const PROGRESS_STATUS_DATA_2026: MainCategory[] = [
   {
     title: 'Strategy And Planning',
     percentage: '97.78%',
@@ -558,6 +609,40 @@ export const PROGRESS_STATUS_DATA: MainCategory[] = [
   },
 ];
 
+// Simplified versions for 2025 and 2024 - keeping same structure but different percentages
+export const PROGRESS_STATUS_DATA_2025: MainCategory[] = PROGRESS_STATUS_DATA_2026.map((category, index) => {
+  const percentages = ['85.50%', '65.20%', '72.30%', '82.15%', '68.75%', '58.33%', '95.00%', '55.00%', '80.00%', '12.50%'];
+  return {
+    ...category,
+    percentage: percentages[index] || category.percentage,
+    subCategories: category.subCategories.map((subCat) => ({
+      ...subCat,
+      items: subCat.items.map((item, itemIndex) => {
+        // Change some statuses to show progress - deterministic based on index
+        if (item.status === 'completed' && itemIndex % 3 === 0) {
+          return { ...item, status: 'in-progress' as const };
+        }
+        if (item.status === 'delayed' && itemIndex % 2 === 0) {
+          return { ...item, status: 'in-progress' as const };
+        }
+        return item;
+      }),
+    })),
+  };
+});
+
+export const PROGRESS_STATUS_DATA_2024: MainCategory[] = PROGRESS_STATUS_DATA_2026.map((category) => ({
+  ...category,
+  percentage: '100%',
+  subCategories: category.subCategories.map((subCat) => ({
+    ...subCat,
+    items: subCat.items.map((item) => ({ ...item, status: 'completed' as const })),
+  })),
+}));
+
+// Default export for backward compatibility
+export const PROGRESS_STATUS_DATA = PROGRESS_STATUS_DATA_2026;
+
 export const TIMELINE_STATUS_COLOR: Record<TimelineStepStatusValue, string> = {
   [TimelineStepStatus.COMPLETED]: '#22c55e',
   [TimelineStepStatus.IN_PROGRESS]: '#3b82f6',
@@ -565,11 +650,89 @@ export const TIMELINE_STATUS_COLOR: Record<TimelineStepStatusValue, string> = {
   [TimelineStepStatus.PENDING]: '#d1d5db',
 };
 
-export const TIMELINE_STEPS: TimelineStep[] = [
+export const TIMELINE_STEPS_2026: TimelineStep[] = [
   { label: 'Kickoff Workshop', date: 'Mar 17', status: TimelineStepStatus.COMPLETED },
   { label: 'Data Collection', date: 'March 18', status: TimelineStepStatus.COMPLETED },
   { label: 'Initial Phase', date: 'May 8', status: TimelineStepStatus.DELAYED },
   { label: 'Verification', date: 'May 9 – July 12', status: TimelineStepStatus.DELAYED },
   { label: 'Completion Reviews', date: 'July 13', status: TimelineStepStatus.DELAYED },
   { label: 'Cycle Conclusion', date: 'August 21', status: TimelineStepStatus.DELAYED },
+];
+
+export const TIMELINE_STEPS_2025: TimelineStep[] = [
+  { label: 'Planning Phase', date: 'Jan 15', status: TimelineStepStatus.COMPLETED },
+  { label: 'Requirements Gathering', date: 'Feb 20', status: TimelineStepStatus.COMPLETED },
+  { label: 'Design & Development', date: 'Apr 10', status: TimelineStepStatus.IN_PROGRESS },
+  { label: 'Testing Phase', date: 'Jun 5 – Aug 15', status: TimelineStepStatus.PENDING },
+  { label: 'Deployment', date: 'Sep 1', status: TimelineStepStatus.PENDING },
+  { label: 'Project Closure', date: 'Oct 30', status: TimelineStepStatus.PENDING },
+];
+
+export const TIMELINE_STEPS_2024: TimelineStep[] = [
+  { label: 'Project Initiation', date: 'Feb 1', status: TimelineStepStatus.COMPLETED },
+  { label: 'Analysis & Design', date: 'Mar 15', status: TimelineStepStatus.COMPLETED },
+  { label: 'Implementation', date: 'May 1', status: TimelineStepStatus.COMPLETED },
+  { label: 'Quality Assurance', date: 'Jul 10 – Sep 20', status: TimelineStepStatus.COMPLETED },
+  { label: 'Final Review', date: 'Oct 5', status: TimelineStepStatus.COMPLETED },
+  { label: 'Project Delivery', date: 'Nov 15', status: TimelineStepStatus.COMPLETED },
+];
+
+// Default export for backward compatibility
+export const TIMELINE_STEPS = TIMELINE_STEPS_2026;
+
+// Compliance Score Data by Year
+export const COMPLIANCE_SCORE_2026 = {
+  score: 50,
+  label: 'Basic Standards 2026',
+};
+
+export const COMPLIANCE_SCORE_2025 = {
+  score: 45,
+  label: 'Basic Standards 2025',
+};
+
+export const COMPLIANCE_SCORE_2024 = {
+  score: 95,
+  label: 'Basic Standards 2024',
+};
+
+// Audit Readiness Data by Year
+export const AUDIT_READINESS_2026 = {
+  score: 80,
+  label: 'Readiness Level',
+  overdueStds: 12,
+  missingEvidence: 5,
+};
+
+export const AUDIT_READINESS_2025 = {
+  score: 75,
+  label: 'Readiness Level',
+  overdueStds: 15,
+  missingEvidence: 8,
+};
+
+export const AUDIT_READINESS_2024 = {
+  score: 98,
+  label: 'Readiness Level',
+  overdueStds: 2,
+  missingEvidence: 1,
+};
+
+// Top Performing Leaders Data by Year
+export const TOP_LEADERS_2026: Leader[] = [
+  { id: 1, name: 'Ahmed Al-Ali', perspective: 'Strategy Perspective', score: 96 },
+  { id: 2, name: 'Sarah Al-Khaled', perspective: 'Beneficiary Perspective', score: 94 },
+  { id: 3, name: 'Mohammad Al-Mansour', perspective: 'IT Perspective', score: 92 },
+];
+
+export const TOP_LEADERS_2025: Leader[] = [
+  { id: 1, name: 'Sarah Al-Khaled', perspective: 'Beneficiary Perspective', score: 91 },
+  { id: 2, name: 'Mohammad Al-Mansour', perspective: 'IT Perspective', score: 89 },
+  { id: 3, name: 'Ahmed Al-Ali', perspective: 'Strategy Perspective', score: 87 },
+];
+
+export const TOP_LEADERS_2024: Leader[] = [
+  { id: 1, name: 'Ahmed Al-Ali', perspective: 'Strategy Perspective', score: 98 },
+  { id: 2, name: 'Sarah Al-Khaled', perspective: 'Beneficiary Perspective', score: 97 },
+  { id: 3, name: 'Mohammad Al-Mansour', perspective: 'IT Perspective', score: 95 },
 ];

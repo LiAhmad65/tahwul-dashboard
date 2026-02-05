@@ -1,13 +1,13 @@
 import { Section } from '../../common/Section';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { useComplianceScoreData, useCountAnimation } from '../../../utils/hooks';
+import { useYear } from '../../../contexts/YearContext';
 
-interface ComplianceScoreProps {
-  score: number;
-  label: string;
-}
-
-export const ComplianceScore = ({ score, label }: ComplianceScoreProps) => {
+export const ComplianceScore = () => {
+  const { selectedYear } = useYear();
+  const { score, label } = useComplianceScoreData(selectedYear);
+  const animatedScore = useCountAnimation(score);
   return (
     <Section title="Overall Compliance Score">
       <div className="flex flex-col items-center justify-center py-6">
@@ -20,7 +20,7 @@ export const ComplianceScore = ({ score, label }: ComplianceScoreProps) => {
             }}
           >
             <CircularProgressbar
-              value={score}
+              value={animatedScore}
               circleRatio={0.5}
               strokeWidth={5}
               styles={buildStyles({
@@ -34,7 +34,7 @@ export const ComplianceScore = ({ score, label }: ComplianceScoreProps) => {
           </div>
           <div className="relative z-10 mt-15 flex flex-col items-center justify-center pointer-events-none">
             <span className="text-[44px] font-bold text-primary-dark-blue">
-              {score}%
+              {animatedScore}%
             </span>
             <span className="text-sm text-gray-text mt-2">
               {label}

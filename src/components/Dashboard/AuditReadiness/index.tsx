@@ -1,15 +1,15 @@
 import { Section } from '../../common/Section';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { useAuditReadinessData, useCountAnimation } from '../../../utils/hooks';
+import { useYear } from '../../../contexts/YearContext';
 
-interface AuditReadinessProps {
-  score: number;
-  label: string;
-  overdueStds: number;
-  missingEvidence: number;
-}
-
-export const AuditReadiness = ({ score, label, overdueStds, missingEvidence }: AuditReadinessProps) => {
+export const AuditReadiness = () => {
+  const { selectedYear } = useYear();
+  const { score, label, overdueStds, missingEvidence } = useAuditReadinessData(selectedYear);
+  const animatedScore = useCountAnimation(score);
+  const animatedOverdueStds = useCountAnimation(overdueStds);
+  const animatedMissingEvidence = useCountAnimation(missingEvidence);
   return (
     <Section title="Audit Readiness">
       <div className="flex flex-col items-center justify-center py-6">
@@ -22,7 +22,7 @@ export const AuditReadiness = ({ score, label, overdueStds, missingEvidence }: A
             }}
           >
             <CircularProgressbar
-              value={score}
+              value={animatedScore}
               circleRatio={0.5}
               strokeWidth={5}
               styles={buildStyles({
@@ -36,7 +36,7 @@ export const AuditReadiness = ({ score, label, overdueStds, missingEvidence }: A
           </div>
           <div className="relative z-10 mt-15 flex flex-col items-center justify-center pointer-events-none">
             <span className="text-[44px] font-bold text-primary-dark-blue">
-              {score}%
+              {animatedScore}%
             </span>
             <span className="text-sm text-gray-text mt-2">
               {label}
@@ -51,7 +51,7 @@ export const AuditReadiness = ({ score, label, overdueStds, missingEvidence }: A
         <div className="flex justify-around w-full">
           <div className="flex flex-col items-center">
             <span className="text-3xl font-bold text-primary-dark-blue">
-              {overdueStds}
+              {animatedOverdueStds}
             </span>
             <span className="text-sm text-gray-text mt-1">
               Overdue Stds
@@ -59,7 +59,7 @@ export const AuditReadiness = ({ score, label, overdueStds, missingEvidence }: A
           </div>
           <div className="flex flex-col items-center">
             <span className="text-3xl font-bold text-primary-dark-blue">
-              {missingEvidence}
+              {animatedMissingEvidence}
             </span>
             <span className="text-sm text-gray-text mt-1">
               Missing Evidence

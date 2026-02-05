@@ -1,13 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import { StatusMap } from './StatusMap';
 import { ProgressCard } from './StatusMap/ProgressCard';
-import type { MainCategory } from '../../../utils/types';
+import { useProgressStatusData } from '../../../utils/hooks';
+import { useYear } from '../../../contexts/YearContext';
 
-interface ProgressStatusProps {
-  data: MainCategory[];
-}
-
-export const ProgressStatus = ({ data }: ProgressStatusProps) => {
+export const ProgressStatus = () => {
+  const { selectedYear } = useYear();
+  const data = useProgressStatusData(selectedYear);
   const navigate = useNavigate();
 
   const handleStrategyPlanningClick = () => {

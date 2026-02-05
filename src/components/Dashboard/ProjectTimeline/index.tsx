@@ -1,16 +1,14 @@
-import { useState } from 'react';
 import { Box, LinearProgress, Typography } from '@mui/material';
 import { Dropdown } from '../../common/Dropdown';
 import { Section } from '../../common/Section';
 import { TIMELINE_STATUS_COLOR } from '../../../utils/constants';
-import { TimelineStepStatus, type TimelineStep } from '../../../utils/types';
+import { TimelineStepStatus } from '../../../utils/types';
+import { useTimelineData } from '../../../utils/hooks';
+import { useYear } from '../../../contexts/YearContext';
 
-interface ProjectTimelineProps {
-  data: TimelineStep[];
-}
-
-export const ProjectTimeline = ({ data }: ProjectTimelineProps) => {
-  const [selectedYear, setSelectedYear] = useState('2026');
+export const ProjectTimeline = () => {
+  const { selectedYear, setSelectedYear } = useYear();
+  const data = useTimelineData(selectedYear);
 
   const yearOptions = [
     { value: '2026', label: '2026' },
@@ -19,7 +17,12 @@ export const ProjectTimeline = ({ data }: ProjectTimelineProps) => {
   ];
 
   const completedCount = data.filter(s => s.status === TimelineStepStatus.COMPLETED).length;
-  const progressPercent = (completedCount / (data.length - 1)) * 100;
+  // When all steps are completed, show 100%, otherwise calculate based on completed count
+  const progressPercent = completedCount === data.length 
+    ? 100 
+    : data.length > 1 
+      ? (completedCount / (data.length - 1)) * 100 
+      : 0;
 
   return (
     <Section>

@@ -1,16 +1,21 @@
 import { Section } from '../Section';
+import { useRecentActivitiesData } from '../../../utils/hooks';
+import { useYear } from '../../../contexts/YearContext';
 import type { Activity } from '../../../utils/types';
 
 interface RecentActivitiesProps {
-  data: Activity[];
+  data?: Activity[];
 }
 
 export const RecentActivities = ({ data }: RecentActivitiesProps) => {
+  const { selectedYear } = useYear();
+  const yearData = useRecentActivitiesData(selectedYear);
+  const displayData = data || yearData;
   return (
     <Section title="Recent Activities">
       <div className="max-h-[300px] overflow-y-auto">
         <div className="flex flex-col">
-          {data?.map((activity) => (
+          {displayData?.map((activity) => (
             <div key={activity.id}>
               <div className="flex items-start justify-between py-4 border-t border-gray-border">
                 <div className="flex items-start gap-[9px] flex-1">

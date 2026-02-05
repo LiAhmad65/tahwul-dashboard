@@ -89,3 +89,10 @@ export interface TimelineStep {
   date: string;
   status: TimelineStepStatusValue;
 }
+
+export interface Leader {
+  id: number;
+  name: string;
+  perspective: string;
+  score: number;
+}

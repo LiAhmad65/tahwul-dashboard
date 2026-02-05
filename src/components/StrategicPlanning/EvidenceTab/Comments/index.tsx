@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { Section } from '../../../common/Section';
 import { Button } from '../../../common/Button';
 import { ICONS } from '../../../../utils/icons';
@@ -8,6 +8,15 @@ export const Comments = () => {
   const [comments, setComments] = useState<Comment[]>(INITIAL_COMMENTS);
   const [newComment, setNewComment] = useState('');
   const [imageErrors, setImageErrors] = useState<Set<string>>(new Set());
+  const commentsEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = useCallback(() => {
+    commentsEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, []);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [comments, scrollToBottom]);
 
   const handlePostComment = () => {
     if (newComment.trim()) {
@@ -64,6 +73,7 @@ export const Comments = () => {
               <p className="text-sm text-primary-dark-blue">{comment.comment}</p>
             </div>
           ))}
+          <div ref={commentsEndRef} />
         </div>
 
         {/* New Comment Input */}

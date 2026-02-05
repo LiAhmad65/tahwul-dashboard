@@ -1,12 +1,11 @@
 import { Section } from '../../common/Section';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
-import type { YearlyPerformanceData } from '../../../utils/types';
+import { useYearlyPerformanceData } from '../../../utils/hooks';
+import { useYear } from '../../../contexts/YearContext';
 
-interface YearlyPerformanceProps {
-  data: YearlyPerformanceData[];
-}
-
-export const YearlyPerformance = ({ data }: YearlyPerformanceProps) => {
+export const YearlyPerformance = () => {
+  const { selectedYear } = useYear();
+  const data = useYearlyPerformanceData(selectedYear);
   return (
     <Section title="12-Month Performance">
       <div className="py-4">
