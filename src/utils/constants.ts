@@ -1,9 +1,9 @@
 import type { FileStatItem } from '../components/common/FileStats';
 import { ICONS } from './icons';
-import { ProgressStatusType, type StatusItem, type YearlyPerformanceData, type DetailItem, type EvidenceDocument, type TableColumn, type Comment, type Activity } from './types';
+import { ProgressStatusType, type StatusItem, type YearlyPerformanceData, type DetailItem, type EvidenceDocument, type TableColumn, type Comment, type Activity, type MainCategory } from './types';
 
 export { ProgressStatusType };
-export type { StatusItem, YearlyPerformanceData, DetailItem, EvidenceDocument, TableColumn, Comment, Activity };
+export type { StatusItem, YearlyPerformanceData, DetailItem, EvidenceDocument, TableColumn, Comment, Activity, MainCategory };
 
 export const STATUS_MAP: StatusItem[] = [
   { label: 'Not Started', color: '#9CA3AF', type: ProgressStatusType.NOT_STARTED },
@@ -283,5 +283,277 @@ export const RECENT_ACTIVITIES_DATA: Activity[] = [
     id: 3,
     description: "New Criterion '5.3 Digital Identity' Was Created By Admin",
     timestamp: '1 Hour Ago',
+  },
+];
+
+export const PROGRESS_STATUS_DATA: MainCategory[] = [
+  {
+    title: 'Strategy And Planning',
+    percentage: '97.78%',
+    subCategories: [
+      {
+        title: 'Digital Transformation',
+        items: [
+          { id: 1, status: 'completed' },
+          { id: 2, status: 'completed' },
+          { id: 3, status: 'completed' },
+        ],
+      },
+      {
+        title: 'Digital Governance',
+        items: [
+          { id: 1, status: 'completed' },
+          { id: 2, status: 'completed' },
+          { id: 3, status: 'in-progress' },
+        ],
+      },
+      {
+        title: 'Enterprise Architecture',
+        items: [
+          { id: 1, status: 'completed' },
+          { id: 2, status: 'completed' },
+          { id: 3, status: 'completed' },
+          { id: 4, status: 'completed' },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Organization And Culture',
+    percentage: '70.83%',
+    subCategories: [
+      {
+        title: 'Digital Culture And Environment',
+        items: [
+          { id: 1, status: 'completed' },
+          { id: 2, status: 'in-progress' },
+          { id: 3, status: 'in-progress' },
+        ],
+      },
+      {
+        title: 'Leadership Development',
+        items: [
+          { id: 1, status: 'completed' },
+          { id: 2, status: 'completed' },
+          { id: 3, status: 'completed' },
+          { id: 4, status: 'completed' },
+        ],
+      },
+      {
+        title: 'Skills & Capacity Building',
+        items: [
+          { id: 1, status: 'in-progress' },
+          { id: 2, status: 'in-progress' },
+          { id: 3, status: 'in-progress' },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Operations And Execution',
+    percentage: '80.00%',
+    subCategories: [
+      {
+        title: 'Business Processes',
+        items: [
+          { id: 1, status: 'completed' },
+          { id: 2, status: 'in-progress' },
+          { id: 3, status: 'completed' },
+          { id: 4, status: 'completed' },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Business Continuity',
+    percentage: '90.59%',
+    subCategories: [
+      {
+        title: 'Risk Management',
+        items: [
+          { id: 1, status: 'completed' },
+          { id: 2, status: 'completed' },
+          { id: 3, status: 'completed' },
+          { id: 4, status: 'completed' },
+          { id: 5, status: 'completed' },
+        ],
+      },
+      {
+        title: 'Business Continuity',
+        items: [
+          { id: 1, status: 'completed' },
+          { id: 2, status: 'completed' },
+          { id: 3, status: 'partially-uploaded' },
+          { id: 4, status: 'completed' },
+          { id: 5, status: 'completed' },
+          { id: 6, status: 'completed' },
+          { id: 7, status: 'completed' },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Information Technology',
+    percentage: '75.00%',
+    subCategories: [
+      {
+        title: 'Support Systems',
+        items: [
+          { id: 1, status: 'fully-uploaded' },
+          { id: 2, status: 'completed' },
+          { id: 3, status: 'completed' },
+          { id: 4, status: 'completed' },
+          { id: 5, status: 'completed' },
+        ],
+      },
+      {
+        title: 'IT Infrastructure',
+        items: [
+          { id: 1, status: 'completed' },
+          { id: 2, status: 'completed' },
+          { id: 3, status: 'completed' },
+          { id: 4, status: 'completed' },
+          { id: 5, status: 'partially-uploaded' },
+          { id: 6, status: 'completed' },
+          { id: 7, status: 'completed' },
+        ],
+      },
+      {
+        title: 'Cloud Infrastructure',
+        items: [
+          { id: 1, status: 'completed' },
+          { id: 2, status: 'completed' },
+          { id: 3, status: 'completed' },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Comprehensive Governance',
+    percentage: '64.44%',
+    subCategories: [
+      {
+        title: 'Governance Platforms',
+        items: [
+          { id: 1, status: 'completed' },
+          { id: 2, status: 'completed' },
+          { id: 3, status: 'completed' },
+          { id: 4, status: 'partially-uploaded' },
+          { id: 5, status: 'completed' },
+          { id: 6, status: 'completed' },
+          { id: 7, status: 'completed' },
+          { id: 8, status: 'completed' },
+          { id: 9, status: 'completed' },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Channels And Services',
+    percentage: '100%',
+    subCategories: [
+      {
+        title: 'Service Quality',
+        items: [
+          { id: 1, status: 'completed' },
+          { id: 2, status: 'completed' },
+          { id: 3, status: 'completed' },
+        ],
+      },
+      {
+        title: 'Digital Channels',
+        items: [
+          { id: 1, status: 'completed' },
+          { id: 2, status: 'completed' },
+          { id: 3, status: 'completed' },
+          { id: 4, status: 'completed' },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Beneficiary Centralization',
+    percentage: '60.00%',
+    subCategories: [
+      {
+        title: 'User Engagement',
+        items: [
+          { id: 1, status: 'in-progress' },
+          { id: 2, status: 'in-progress' },
+          { id: 3, status: 'in-progress' },
+          { id: 4, status: 'completed' },
+        ],
+      },
+      {
+        title: 'User Relationship',
+        items: [
+          { id: 1, status: 'completed' },
+          { id: 2, status: 'completed' },
+          { id: 3, status: 'in-progress' },
+        ],
+      },
+      {
+        title: 'User Experience',
+        items: [
+          { id: 1, status: 'completed' },
+          { id: 2, status: 'in-progress' },
+          { id: 3, status: 'completed' },
+          { id: 4, status: 'in-progress' },
+          { id: 5, status: 'completed' },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Government Data',
+    percentage: '87.50%',
+    subCategories: [
+      {
+        title: 'Data Governance',
+        items: [
+          { id: 1, status: 'completed' },
+          { id: 2, status: 'completed' },
+          { id: 3, status: 'in-progress' },
+        ],
+      },
+      {
+        title: 'Data Usage & Availability',
+        items: [
+          { id: 1, status: 'completed' },
+          { id: 2, status: 'completed' },
+          { id: 3, status: 'in-progress' },
+        ],
+      },
+      {
+        title: 'Open Data',
+        items: [
+          { id: 1, status: 'completed' },
+          { id: 2, status: 'completed' },
+          { id: 3, status: 'in-progress' },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Research And Innovation',
+    percentage: '17.65%',
+    subCategories: [
+      {
+        title: 'Innovation',
+        items: [
+          { id: 1, status: 'delayed' },
+          { id: 2, status: 'delayed' },
+          { id: 3, status: 'delayed' },
+          { id: 4, status: 'delayed' },
+        ],
+      },
+      {
+        title: 'Creative Solutions',
+        items: [
+          { id: 1, status: 'in-progress' },
+          { id: 2, status: 'delayed' },
+        ],
+      },
+    ],
   },
 ];

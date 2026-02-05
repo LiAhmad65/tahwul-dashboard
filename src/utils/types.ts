@@ -55,3 +55,22 @@ export interface Activity {
   description: string;
   timestamp: string;
 }
+
+export type ProgressStatus = 'not-started' | 'in-progress' | 'completed' | 'partially-uploaded' | 'fully-uploaded' | 'delayed';
+
+export interface ProgressItem {
+  id: number;
+  status: ProgressStatus;
+}
+
+export interface SubCategory {
+  title: string;
+  items: ProgressItem[];
+}
+
+export interface MainCategory {
+  title: string;
+  percentage: string;
+  subCategories: SubCategory[];
+  onPress?: () => void;
+}

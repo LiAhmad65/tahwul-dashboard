@@ -19,4 +19,11 @@
   --color-status-approved-text:#34C759;
   --color-status-pending-bg:#FFCC001A;
   --color-status-pending-text:#FFCC00;
+  --color-status-completed:#1EA54E;
+  --color-status-in-progress:#F59F0A;
+  --color-status-not-started:#9CA3AF;
+  --color-status-partially-uploaded:#1D3557;
+  --color-status-fully-uploaded:#0078D7;
+  --color-status-delayed:#DB1F26;
+  --color-percentage-badge-bg:#344967;
 }
