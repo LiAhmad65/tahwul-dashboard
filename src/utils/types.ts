@@ -74,3 +74,18 @@ export interface MainCategory {
   subCategories: SubCategory[];
   onPress?: () => void;
 }
+
+export const TimelineStepStatus = {
+  COMPLETED: 'completed',
+  IN_PROGRESS: 'in-progress',
+  PENDING: 'pending',
+  DELAYED: 'delayed',
+} as const;
+
+export type TimelineStepStatusValue = typeof TimelineStepStatus[keyof typeof TimelineStepStatus];
+
+export interface TimelineStep {
+  label: string;
+  date: string;
+  status: TimelineStepStatusValue;
+}

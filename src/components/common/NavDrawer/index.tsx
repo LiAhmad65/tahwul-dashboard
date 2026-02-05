@@ -56,17 +56,24 @@ export const NavDrawer = () => {
 
             {/* Navigation Items */}
             <nav className="flex flex-col gap-2">
-              {NAV_OPTIONS.map((option) => (
-                <DrawerButton
-                  key={option.id}
-                  id={option.id}
-                  name={option.name}
-                  icon={option.icon}
-                  route={option.route}
-                  isActive={location.pathname === option.route}
-                  onClick={() => navigate(option.route)}
-                />
-              ))}
+              {NAV_OPTIONS.map((option) => {
+                const isActive = 
+                  location.pathname === option.route ||
+                  location.pathname.startsWith(option.route + '/') ||
+                  location.pathname.includes(option.id);
+                
+                return (
+                  <DrawerButton
+                    key={option.id}
+                    id={option.id}
+                    name={option.name}
+                    icon={option.icon}
+                    route={option.route}
+                    isActive={isActive}
+                    onClick={() => navigate(option.route)}
+                  />
+                );
+              })}
             </nav>
           </>
         )}

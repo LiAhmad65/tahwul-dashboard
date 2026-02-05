@@ -1,14 +1,15 @@
 import { useState } from 'react';
+import { Box, LinearProgress, Typography } from '@mui/material';
 import { Dropdown } from '../../common/Dropdown';
 import { Section } from '../../common/Section';
+import { TIMELINE_STATUS_COLOR } from '../../../utils/constants';
+import { TimelineStepStatus, type TimelineStep } from '../../../utils/types';
 
-interface Milestone {
-  date: string;
-  label: string;
-  isActive?: boolean;
+interface ProjectTimelineProps {
+  data: TimelineStep[];
 }
 
-export const ProjectTimeline = () => {
+export const ProjectTimeline = ({ data }: ProjectTimelineProps) => {
   const [selectedYear, setSelectedYear] = useState('2026');
 
   const yearOptions = [
@@ -17,20 +18,8 @@ export const ProjectTimeline = () => {
     { value: '2024', label: '2024' },
   ];
 
-  const milestones: Milestone[] = [
-    { date: 'Mar 17', label: 'Kickoff Workshop', isActive: true },
-    { date: 'March 18', label: 'Data Collection', isActive: true },
-    { date: 'May 8', label: 'Initial Phase' },
-    { date: 'May 9-July 12', label: 'Verification' },
-    { date: 'July 13', label: 'Completion Reviews' },
-    { date: 'August 21', label: 'Cycle Conclusion' },
-  ];
-
-  // Calculate positions for timeline (simplified - you may want to use actual date calculations)
-  const getPosition = (index: number) => {
-    const positions = [0, 8, 25, 35, 50, 65, 85]; // Approximate percentages
-    return positions[index] || 0;
-  };
+  const completedCount = data.filter(s => s.status === TimelineStepStatus.COMPLETED).length;
+  const progressPercent = (completedCount / (data.length - 1)) * 100;
 
   return (
     <Section>
@@ -44,49 +33,87 @@ export const ProjectTimeline = () => {
         />
       </div>
 
-      {/* Timeline Bar */}
-      <div className="relative mb-8">
-        <div className="relative h-2 bg-gray-200 rounded-full overflow-hidden">
-          {/* Active segment (green) */}
-          <div
-            className="absolute h-full bg-green-500 rounded-full"
-            style={{ left: '0%', width: '8%' }}
-          >
-            {/* Start marker */}
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 bg-white border-2 border-green-500 rounded-full"></div>
-            {/* End marker */}
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-4 h-4 bg-white border-2 border-green-500 rounded-full"></div>
-          </div>
-        </div>
-
-        {/* Milestone dots */}
-        {milestones.map((milestone, index) => {
-          const position = getPosition(index);
-          const isActive = milestone.isActive;
+      {/* Progress Bar with Dots */}
+      <Box sx={{ width: '100%', mb: 4, position: 'relative' }}>
+        <LinearProgress
+          variant="determinate"
+          value={progressPercent}
+          sx={{
+            height: 8,
+            borderRadius: 4,
+            backgroundColor: '#f1f5f9',
+            '& .MuiLinearProgress-bar': {
+              backgroundColor: '#22c55e',
+            },
+          }}
+        />
+        
+        {/* Dots positioned on the progress bar */}
+        {data.map((step, index) => {
+          const positionPercent = (index / (data.length - 1)) * 100;
+          const isCompleted = step.status === TimelineStepStatus.COMPLETED;
+          const dotColor = isCompleted ? '#ffffff' : TIMELINE_STATUS_COLOR[step.status];
+          const dotBorder = isCompleted ? '2px solid #22c55e' : 'none';
           
           return (
-            <div
+            <Box
               key={index}
-              className="absolute top-1/2 -translate-y-1/2"
-              style={{ left: `${position}%`, transform: 'translate(-50%, -50%)' }}
-            >
-              {!isActive && (
-                <div className="w-3 h-3 bg-red-timeline rounded-full"></div>
-              )}
-            </div>
+              sx={{
+                position: 'absolute',
+                top: '50%',
+                left: `${positionPercent}%`,
+                transform: 'translate(-50%, -50%)',
+                width: isCompleted ? 16 : 12,
+                height: isCompleted ? 16 : 12,
+                borderRadius: '50%',
+                backgroundColor: dotColor,
+                border: dotBorder,
+                zIndex: 1,
+              }}
+            />
           );
         })}
-      </div>
+      </Box>
 
-      {/* Milestone Labels */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-        {milestones.map((milestone, index) => (
-          <div key={index} className="flex flex-col">
-            <span className="text-xs font-medium text-gray-600 mb-1">{milestone.date}</span>
-            <span className="text-sm text-gray-900">{milestone.label}</span>
-          </div>
-        ))}
-      </div>
+      {/* Labels below progress bar */}
+      <Box
+        sx={{
+          position: 'relative',
+          width: '100%',
+          mt: 2,
+          minHeight: '60px',
+        }}
+      >
+        {data.map((step, index) => {
+          const positionPercent = (index / (data.length - 1)) * 100;
+          const isFirst = index === 0;
+          const isLast = index === data.length - 1;
+          
+          return (
+            <Box
+              key={index}
+              sx={{
+                position: 'absolute',
+                left: `${positionPercent}%`,
+                transform: isFirst ? 'translateX(0)' : isLast ? 'translateX(-100%)' : 'translateX(-50%)',
+                textAlign: isFirst ? 'left' : isLast ? 'right' : 'center',
+                width: '120px',
+                maxWidth: '120px',
+              }}
+            >
+              {/* Date */}
+              <Typography variant="caption" sx={{ color: '#8597A8', display: 'block', mb: 0.5 }}>
+                {step.date}
+              </Typography>
+
+              {/* Label */}
+              <Typography variant="body2" sx={{ fontWeight: 500, color: '#1D3557' }}>
+                {step.label}
+              </Typography>
+            </Box>
+          );
+        })}
+      </Box>
     </Section>
   );
 };

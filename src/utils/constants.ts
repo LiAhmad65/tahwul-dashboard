@@ -1,9 +1,9 @@
 import type { FileStatItem } from '../components/common/FileStats';
 import { ICONS } from './icons';
-import { ProgressStatusType, type StatusItem, type YearlyPerformanceData, type DetailItem, type EvidenceDocument, type TableColumn, type Comment, type Activity, type MainCategory } from './types';
+import { ProgressStatusType, TimelineStepStatus, type StatusItem, type YearlyPerformanceData, type DetailItem, type EvidenceDocument, type TableColumn, type Comment, type Activity, type MainCategory, type TimelineStep, type TimelineStepStatusValue } from './types';
 
-export { ProgressStatusType };
-export type { StatusItem, YearlyPerformanceData, DetailItem, EvidenceDocument, TableColumn, Comment, Activity, MainCategory };
+export { ProgressStatusType, TimelineStepStatus };
+export type { StatusItem, YearlyPerformanceData, DetailItem, EvidenceDocument, TableColumn, Comment, Activity, MainCategory, TimelineStep, TimelineStepStatusValue };
 
 export const STATUS_MAP: StatusItem[] = [
   { label: 'Not Started', color: '#9CA3AF', type: ProgressStatusType.NOT_STARTED },
@@ -556,4 +556,20 @@ export const PROGRESS_STATUS_DATA: MainCategory[] = [
       },
     ],
   },
+];
+
+export const TIMELINE_STATUS_COLOR: Record<TimelineStepStatusValue, string> = {
+  [TimelineStepStatus.COMPLETED]: '#22c55e',
+  [TimelineStepStatus.IN_PROGRESS]: '#3b82f6',
+  [TimelineStepStatus.DELAYED]: '#ef4444',
+  [TimelineStepStatus.PENDING]: '#d1d5db',
+};
+
+export const TIMELINE_STEPS: TimelineStep[] = [
+  { label: 'Kickoff Workshop', date: 'Mar 17', status: TimelineStepStatus.COMPLETED },
+  { label: 'Data Collection', date: 'March 18', status: TimelineStepStatus.COMPLETED },
+  { label: 'Initial Phase', date: 'May 8', status: TimelineStepStatus.DELAYED },
+  { label: 'Verification', date: 'May 9 – July 12', status: TimelineStepStatus.DELAYED },
+  { label: 'Completion Reviews', date: 'July 13', status: TimelineStepStatus.DELAYED },
+  { label: 'Cycle Conclusion', date: 'August 21', status: TimelineStepStatus.DELAYED },
 ];
